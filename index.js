@@ -34,12 +34,17 @@ var tmp = require('tmp'),
 
                         return instance
                     },
-                    save: function (file) {
+                    save: function (file, done) {
                         modifiers.process(thrower(function () {
 
                             book.persist(thrower(function () {
 
-                                zip.compress(root, file, thrower(cleanup))
+                                zip.compress(root, file, thrower(function () {
+                                    cleanup()
+                                    if (done) {
+                                        done()
+                                    }
+                                }))
                             }))
                         }))
                     }
@@ -50,7 +55,7 @@ var tmp = require('tmp'),
     }
 
 module.exports = function (input, callback) {
-    tmp.dir({unsafeCleanup: true}, function (err, path, cleanup) {
+    tmp.dir({unsafeCleanup: true, mode: 0750}, function (err, path, cleanup) {
         if (err) {
             throw err
         }
