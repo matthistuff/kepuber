@@ -1,5 +1,3 @@
-Error.stackTraceLimit = Infinity;
-
 var fs = require('fs'),
     path = require('path'),
     cli = require('commander'),
@@ -8,12 +6,12 @@ var fs = require('fs'),
     stripcss = require('./lib/modifiers/stripcss'),
     annotator = require('./lib/modifiers/annotator')
 
-function fixextension (filename) {
+function fixExtension (filename) {
     if (filename.indexOf('.kepub') === -1) {
-        filename = filename.replace('.epub', '.kepub.epub');
+        filename = filename.replace('.epub', '.kepub.epub')
     }
 
-    return filename;
+    return filename
 }
 
 function isDirectory (filename) {
@@ -23,9 +21,9 @@ function isDirectory (filename) {
 function run (source, dest) {
     if (dest && isDirectory(dest)) {
         var filename = path.basename(source);
-        dest = path.join(dest, fixextension(filename));
+        dest = path.join(dest, fixExtension(filename))
     } else if (!dest) {
-        dest = fixextension(source);
+        dest = fixExtension(source)
     }
 
     kepuber(source, function (kepub) {
@@ -45,8 +43,8 @@ function run (source, dest) {
 }
 
 cli
-    .version('0.0.1')
-    .usage('inputFile')
+    .version('0.0.2')
+    .usage('inputFiles')
     .option('-c, --nocss', 'Strip all CSS')
     .option('-f, --nofonts', 'Strip all custom fonts')
     .option('-d, --destination <destination>', 'Output to file/s to <destination>')
