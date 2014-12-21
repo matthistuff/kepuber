@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var fs = require('fs'),
     path = require('path'),
     cli = require('commander'),
@@ -43,7 +44,7 @@ function run (source, dest) {
 }
 
 cli
-    .version('0.0.2')
+    .version('0.0.3')
     .usage('inputFiles')
     .option('-c, --nocss', 'Strip all CSS')
     .option('-f, --nofonts', 'Strip all custom fonts')
