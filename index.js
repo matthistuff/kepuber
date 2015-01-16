@@ -3,7 +3,7 @@ var tmp = require('tmp'),
     epub = require('./lib/epub'),
     queue = require('./lib/queue'),
 
-    init = function (root, cleanup, done) {
+    init = function (root, cleanup, callback) {
         return function (err) {
             if (err) {
                 throw err
@@ -45,12 +45,14 @@ var tmp = require('tmp'),
                                         done()
                                     }
                                 }))
+
                             }))
+
                         }))
                     }
                 }
 
-            done(instance)
+            callback(instance)
         }
     }
 
