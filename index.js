@@ -2,6 +2,7 @@ var tmp = require('tmp'),
     zip = require('./lib/zip'),
     epub = require('./lib/epub'),
     queue = require('./lib/queue'),
+    maybe = require('./lib/maybe'),
 
     init = function (root, cleanup, callback) {
         return function (err) {
@@ -35,15 +36,15 @@ var tmp = require('tmp'),
                         return instance
                     },
                     save: function (file, done) {
+                        done = maybe(done)
+
                         modifiers.process(thrower(function () {
 
                             book.persist(thrower(function () {
 
                                 zip.compress(root, file, thrower(function () {
                                     cleanup()
-                                    if (done) {
-                                        done()
-                                    }
+                                    done()
                                 }))
 
                             }))
