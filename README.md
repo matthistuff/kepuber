@@ -42,4 +42,4 @@ Currently the pipeline is limited in what it can do. It is very picky about how 
 
 Currently the only officially supported operating system is MacOS. *nixes should work but currently I do not test them.
 
-DRM removal will and can't be part of this software.
+DRM removal will not and can't be part of this software.
