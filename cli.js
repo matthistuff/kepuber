@@ -44,7 +44,7 @@ function run (source, dest) {
 }
 
 cli
-    .version('0.0.6')
+    .version('0.0.7')
     .usage('inputFiles')
     .option('-c, --nocss', 'Strip all CSS')
     .option('-f, --nofonts', 'Strip all custom fonts')
@@ -58,6 +58,10 @@ if (cli.args.length < 1) {
 
 var source = cli.args,
     dest = cli.destination
+
+if (dest) {
+    dest = path.resolve(dest)
+}
 
 source.forEach(function (item) {
     run(item, dest)
