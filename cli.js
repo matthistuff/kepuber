@@ -64,5 +64,5 @@ if (dest) {
 }
 
 source.forEach(function (item) {
-    run(item, dest)
+    run(path.resolve(item), dest)
 })
