@@ -20,11 +20,9 @@ function isDirectory (filename) {
 }
 
 function run (source, dest) {
-    if (dest && isDirectory(dest)) {
+    if (isDirectory(dest)) {
         var filename = path.basename(source);
         dest = path.join(dest, fixExtension(filename))
-    } else if (!dest) {
-        dest = fixExtension(source)
     }
 
     kepuber(source, function (kepub) {
@@ -48,7 +46,7 @@ cli
     .usage('inputFiles')
     .option('-c, --nocss', 'Strip all CSS')
     .option('-f, --nofonts', 'Strip all custom fonts')
-    .option('-d, --destination <destination>', 'Output to file/s to <destination>')
+    .option('-d, --destination <destination>', 'Output to file/s to <destination>', process.cwd())
     .parse(process.argv)
 
 if (cli.args.length < 1) {
@@ -57,11 +55,7 @@ if (cli.args.length < 1) {
 }
 
 var source = cli.args,
-    dest = cli.destination
-
-if (dest) {
-    dest = path.resolve(dest)
-}
+    dest = path.resolve(cli.destination)
 
 source.forEach(function (item) {
     run(path.resolve(item), dest)
