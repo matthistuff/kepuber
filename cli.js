@@ -42,7 +42,7 @@ function run (source, dest) {
 }
 
 cli
-    .version('0.0.8')
+    .version('0.1.0')
     .usage('inputFiles')
     .option('-c, --nocss', 'Strip all CSS')
     .option('-f, --nofonts', 'Strip all custom fonts')
