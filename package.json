@@ -1,8 +1,8 @@
 {
   "name": "kepuber",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Converts epubs to kepubs for better display on Kobo readers.",
-  "main": "index.js",
+  "preferGlobal": true,
   "scripts": {
     "test": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- test"
   },
