@@ -11,7 +11,7 @@ var tmp = require('tmp'),
             }
 
             var book = epub(root),
-                modifiers = queue(),
+                modifiers = queue(1),
                 runner = function (callable) {
                     return function (done) {
                         callable(book, done)
@@ -58,7 +58,7 @@ var tmp = require('tmp'),
     }
 
 module.exports = function (input, callback) {
-    tmp.dir({unsafeCleanup: true, mode: 0750}, function (err, path, cleanup) {
+    tmp.dir({unsafeCleanup: true, mode: parseInt('0750', 8)}, function (err, path, cleanup) {
         if (err) {
             throw err
         }
