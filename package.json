@@ -10,6 +10,9 @@
     "type": "git",
     "url": "https://github.com/matthistuff/kepuber.git"
   },
+  "engines": {
+    "node": ">=0.10.0 <0.13"
+  },
   "keywords": [
     "kepub",
     "epub",
