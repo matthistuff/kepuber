@@ -22,15 +22,17 @@
   },
   "homepage": "https://github.com/matthistuff/kepuber",
   "dependencies": {
-    "chai": "^1.10.0",
     "commander": "^2.5.0",
     "glob": "^4.3.1",
     "tmp": "0.0.24"
   },
   "devDependencies": {
+    "chai": "^1.10.0",
     "codeclimate-test-reporter": "0.0.4",
     "istanbul": "^0.3.5",
-    "mocha": "^2.0.1"
+    "mocha": "^2.0.1",
+    "rewire": "^2.3.4",
+    "sinon": "^1.15.3"
   },
   "bin": {
     "kepuber": "cli.js"
