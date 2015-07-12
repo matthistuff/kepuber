@@ -5,7 +5,8 @@ var fs = require('fs'),
     kepuber = require('./index'),
     stripfonts = require('./lib/modifiers/stripfonts'),
     stripcss = require('./lib/modifiers/stripcss'),
-    annotator = require('./lib/modifiers/annotator')
+    annotator = require('./lib/modifiers/annotator'),
+    pkg = require('./package.json')
 
 function fixExtension (filename) {
     if (filename.indexOf('.kepub') === -1) {
@@ -42,7 +43,7 @@ function run (source, dest) {
 }
 
 cli
-    .version('0.1.0')
+    .version(pkg.version)
     .usage('inputFiles')
     .option('-c, --nocss', 'Strip all CSS')
     .option('-f, --nofonts', 'Strip all custom fonts')
