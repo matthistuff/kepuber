@@ -1,6 +1,6 @@
 {
   "name": "kepuber",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Converts epubs to kepubs for better display on Kobo readers.",
   "preferGlobal": true,
   "scripts": {
