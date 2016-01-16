@@ -1,5 +1,5 @@
 /*global expect, sinon, describe, it*/
-var queue = require('../lib/queue')
+var queue = require('../../lib/queue')
 
 describe('Queue', function () {
     var job = function (callDone) {

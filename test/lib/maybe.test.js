@@ -1,5 +1,5 @@
 /*global expect, describe, it*/
-var maybe = require('../lib/maybe')
+var maybe = require('../../lib/maybe')
 
 describe('Maybe helper', function () {
     it('should expose a function', function () {

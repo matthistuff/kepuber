@@ -1,6 +1,6 @@
 /*global expect, sinon, describe, it, before, beforeEach*/
 var rewire = require('rewire'),
-    file = rewire('../lib/file')
+    file = rewire('../../lib/file')
 
 describe('File helper', function () {
     var fs = {
