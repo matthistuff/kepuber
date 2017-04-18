@@ -1,11 +1,9 @@
 language: node_js
 node_js:
-- '0.12'
-- '4'
-- '5'
+- '7'
 addons:
   code_climate:
     repo_token:
       secure: X6xtC+ro2P9kaf2S7bhcfteALB5MVBuodlLr9St+R+g7Qm8feWaStegkQTR8Zo64eJBW2LdhnIhB8oMaWhZI3UCk/mIrUdQ0rRO9A4ECRcblicAB6jqxbDSuYeY1n5syYUDQUmyuCmA94BN1iSjMDJdTm8qHGeaE/84OpTl+o3E=
-after_script:
-- cat coverage/lcov.info | ./node_modules/.bin/codeclimate
+after_success:
+- npm run coverage | ./node_modules/.bin/codeclimate
