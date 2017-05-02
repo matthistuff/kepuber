@@ -38,8 +38,6 @@ kepuber inputFiles
 If omitting the `-d` flag, kepuber will output files to the same directory as its input.
 
 ## Cavecats
-Currently the pipeline is limited in what it can do. It is very picky about how epubs should be structured. It will fail on epubs that have a different structure than a `mimetype` file, a `META-INF` directory and a `OEBPS` directory. This will change in the future.
-
 Currently the only officially supported operating system is MacOS. *nixes should work but currently I do not test them.
 
 DRM removal will not and can't be part of this software.
