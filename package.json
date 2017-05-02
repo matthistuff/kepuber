@@ -7,7 +7,8 @@
     "pretest": "eslint '**/*.js'",
     "test": "nyc --reporter=html --reporter=text ava",
     "coverage": "nyc report --reporter=text-lcov",
-    "ava": "ava"
+    "ava": "ava",
+    "preversion": "npm test"
   },
   "repository": {
     "type": "git",
