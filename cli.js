@@ -5,6 +5,7 @@ const fs = require('fs'),
     kepuber = require('./index'),
     stripfonts = require('./lib/modifiers/stripfonts'),
     stripcss = require('./lib/modifiers/stripcss'),
+    stripEmpty = require('./lib/modifiers/strip-empty'),
     annotator = require('./lib/modifiers/annotator'),
     pkg = require('./package.json');
 
@@ -27,6 +28,7 @@ function run(source, dest) {
     }
 
     kepuber(source, function (kepub) {
+        kepub.use(stripEmpty);
         kepub.use(annotator);
 
         if (cli.nofonts) {
